@@ -14,5 +14,5 @@ NLuaをAndroid用にプロジェクト設定したもの。KeraLuaと一緒に�
 
 * NLuaのLuaネイティブコード(本家Luaのコードとは違います)をAndroid-NDKを使ってビルドする(Android-NDKのサンプルをまねましょう
 * ビルドしたファイルをlibs/{ターゲットCPU名}/hoge.soとかいう感じに置きます。Android-NDKのサンプルをまねるとビルド結果にlibsが出てきます
-* libs置き、かつ.soのビルド設定をAndroidNativeLibraryとするとDllImport("hoge")で読めるようになる
+* libsを「Androidアプリケーションプロジェクト本体に」置き(KeraLuaじゃないです)、かつ.soのビルド設定をAndroidNativeLibraryとするとDllImport("hoge")で読めるようになる
 * KeraLuaがLuaのポートになっており.soファイルを読み込む設定になっているので、.csファイルを追加して、KeraLuaおよびNLuaプロジェクトを作る
