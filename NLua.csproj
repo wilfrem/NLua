@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.0</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{5DD68FBB-73B0-4447-AA38-4BB7FBE1C1E1}</ProjectGuid>
+    <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>NLua</RootNamespace>
+    <AndroidResgenFile>Resources\Resource.designer.cs</AndroidResgenFile>
+    <AndroidResgenClass>Resource</AndroidResgenClass>
+    <MonoAndroidResourcePrefix>Resources</MonoAndroidResourcePrefix>
+    <MonoAndroidAssetsPrefix>Assets</MonoAndroidAssetsPrefix>
+    <AssemblyName>NLua</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <AndroidLinkMode>None</AndroidLinkMode>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>full</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <ConsolePause>false</ConsolePause>
+    <AndroidUseSharedRuntime>false</AndroidUseSharedRuntime>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Mono.Android" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Resources\Resource.designer.cs" />
+    <Compile Include="CheckType.cs" />
+    <Compile Include="Lua.cs" />
+    <Compile Include="LuaBase.cs" />
+    <Compile Include="LuaFunction.cs" />
+    <Compile Include="LuaGlobalAttribute.cs" />
+    <Compile Include="LuaHideAttribute.cs" />
+    <Compile Include="LuaRegistrationHelper.cs" />
+    <Compile Include="LuaTable.cs" />
+    <Compile Include="LuaUserData.cs" />
+    <Compile Include="Metatables.cs" />
+    <Compile Include="ObjectTranslator.cs" />
+    <Compile Include="ObjectTranslatorPool.cs" />
+    <Compile Include="ProxyType.cs" />
+    <Compile Include="Config\NLuaConfig.cs" />
+    <Compile Include="Event\DebugHookEventArgs.cs" />
+    <Compile Include="Event\EventCodes.cs" />
+    <Compile Include="Event\EventMasks.cs" />
+    <Compile Include="Event\HookExceptionEventArgs.cs" />
+    <Compile Include="Exceptions\LuaException.cs" />
+    <Compile Include="Exceptions\LuaScriptException.cs" />
+    <Compile Include="Extensions\GeneralExtensions.cs" />
+    <Compile Include="GenerateEventAssembly\ClassGenerator.cs" />
+    <Compile Include="GenerateEventAssembly\CodeGeneration.cs" />
+    <Compile Include="GenerateEventAssembly\DelegateGenerator.cs" />
+    <Compile Include="GenerateEventAssembly\ILuaGeneratedType.cs" />
+    <Compile Include="GenerateEventAssembly\LuaClassType.cs" />
+    <Compile Include="LuaLib\GCOptions.cs" />
+    <Compile Include="LuaLib\LuaEnums.cs" />
+    <Compile Include="LuaLib\LuaIndexes.cs" />
+    <Compile Include="LuaLib\LuaLib.cs" />
+    <Compile Include="LuaLib\LuaTypes.cs" />
+    <Compile Include="LuaLib\References.cs" />
+    <Compile Include="Method\EventHandlerContainer.cs" />
+    <Compile Include="Method\LuaClassHelper.cs" />
+    <Compile Include="Method\LuaDelegate.cs" />
+    <Compile Include="Method\LuaEventHandler.cs" />
+    <Compile Include="Method\LuaMethodWrapper.cs" />
+    <Compile Include="Method\MethodArgs.cs" />
+    <Compile Include="Method\MethodCache.cs" />
+    <Compile Include="Method\RegisterEventHandler.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AboutResources.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\values\Strings.xml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
+  <ItemGroup>
+    <ProjectReference Include="..\KeraLua\KeraLua.csproj">
+      <Project>{44B03B40-BD37-45DA-AA93-0B6A7CAA027B}</Project>
+      <Name>KeraLua</Name>
+    </ProjectReference>
+  </ItemGroup>
+</Project>
